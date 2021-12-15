@@ -1,9 +1,9 @@
 <!-- Animasi Sweet Alert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
-
-<?php session_start(); ?>
-
+<?php session_start(); 
+error_reporting(0);
+?>
 <?php include './koneksi.php'; ?>
 
 <!-- Tabel Mahasiswa -->
@@ -37,9 +37,9 @@
 				<td><?= $row['nim']; ?></td>
 				<td><?= $row['prodi']; ?></td>
 				<td>
-					<a class="fa fa-pencil btn btn-warning mx-1" href="index.php?p=edit-mahasiswa&id=<?php echo $row['id_mahasiswa']; ?>"></a>
+					<a class="fa fa-pencil btn btn-warning mx-1" href="index.php?p=edit-mahasiswa&id=<?php echo $row['id_mahasiswa']; ?>">Edit</a>
 
-					<a class="hapus fa fa-trash btn btn-danger" name="hapus-mahasiswa" href="index.php?p=fungsi&id=<?php echo $row['id_mahasiswa']; ?>" onclick="return confirm('Apakah ingin di hapus ?');" ></a>
+					<a class="hapus fa fa-trash btn btn-danger" name="hapus-mahasiswa" href="index.php?p=fungsi&id=<?php echo $row['id_mahasiswa']; ?>" onclick="return confirm('Apakah ingin di hapus ?');" >Hapus</a>
 				</td>
 			</tr>
 		<?php	} ?>
@@ -70,4 +70,4 @@
 	</script>
 
 <?php unset($_SESSION['sukses-hapus']);
-} ?>
+}?>

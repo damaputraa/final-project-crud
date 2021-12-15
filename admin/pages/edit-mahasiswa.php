@@ -2,7 +2,7 @@
 
 <?php
 include './koneksi.php';
-
+error_reporting(0);
 $id_mahasiswa = $_GET['id'];
 $query = "SELECT * FROM mahasiswa WHERE id_mahasiswa='$id_mahasiswa'";
 $result = mysqli_query($koneksi, $query);
@@ -31,5 +31,4 @@ while ($row = mysqli_fetch_assoc($result)) {
 	<input type="submit" name="edit-mahasiswa" value="Update" class="btn btn-warning ">
 	<!-- <input id="reset" type="reset" name="" value="reset" class="btn btn-success"> -->
 </form>
-
 <?php } ?>
