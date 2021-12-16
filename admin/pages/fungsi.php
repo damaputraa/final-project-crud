@@ -18,8 +18,7 @@ if (isset($_POST['tambah-mahasiswa'])) {
 
 	if ($queryTambah) {
 		//  ? Menggunakan script dibawah karena tidak bissa jalan di versi php lama
-		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=tb-mahasiswa">';
-		// header("location: index.php?p=tb-mahasiswa");
+		header("location: index.php?p=tb-mahasiswa");
 	} else {
 		echo "ERROR, Tidak Berhasil Tambah Data " . mysqli_error($koneksi);
 	}
@@ -36,8 +35,7 @@ if (isset($_POST['edit-mahasiswa'])) {
 	$_SESSION["sukses-edit"] = 'Data Berhasil Diedit';
 
 	if ($queryEdit) {
-		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=tb-mahasiswa">';
-exit;
+		header("location: index.php?p=tb-mahasiswa");
 	} else {
 		echo "ERROR, Tidak Berhasil Edit Data " . mysqli_error($koneksi);
 	}
@@ -52,7 +50,7 @@ if (isset($_GET['id'])) {
 	$_SESSION["sukses-hapus"] = 'Data Berhasil Dihapus';
 
 	if ($queryHapus == true) {
-		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=tb-mahasiswa">';
+		header("location: index.php?p=tb-mahasiswa");
 	} else {
 		echo "ERROR, Tidak Berhasil Hapus Data " . mysqli_error($koneksi);
 	}
@@ -71,8 +69,7 @@ if (isset($_POST['tambah-admin'])) {
 
 	if ($queryTambah) {
 		//  ? Menggunakan script dibawah karena tidak bissa jalan di versi php lama
-		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=tb-admin">';
-		// header("location: index.php?p=tb-login");
+		header("location: index.php?p=tb-mahasiswa");
 	} else {
 		echo "ERROR, Tidak Berhasil Tambah Data " . mysqli_error($koneksi);
 	}
